@@ -1,31 +1,61 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <header>header</header>
+
+    <div class="flex-container">
+      <div class="unu">
+        <router-link class="ruta" to="/">Pizza</router-link>
+        <router-link class="ruta" to="/paste">Paste</router-link>
+      </div>
+
+      <div class="doi">
+        <router-view />
+      </div>
+
+      <div class="trei">
+        order
+      </div>
     </div>
-    <router-view />
+
+    <footer>footer</footer>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: blue;
+  font-size: 32px;
+}
+.unu {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+.ruta {
+  border: 1px solid black;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 70vh;
+}
+
+.flex-container > div {
+  width: 33%;
+  border: 1px solid black;
   text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
+  line-height: 75px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+header,
+footer {
+  width: 100%;
+  height: 15vh;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 150px;
 }
 </style>
